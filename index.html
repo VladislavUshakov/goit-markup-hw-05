@@ -66,12 +66,12 @@
               Ефективні рішення для <br />
               вашого бізнесу
             </h1>
-            <button class="button" type="button">Замовити послугу</button>
+            <button class="button" type="button" data-modal-open>Замовити послугу</button>
           </div>
         </div>
       </section>
 
-      <section class="quality">
+      <section class="quality section">
         <div class="container">
           <h2 class="visually-hidden">Наші якості</h2>
 
@@ -122,24 +122,33 @@
         </div>
       </section>
 
-      <section class="job">
+      <section class="job section">
         <div class="container">
           <h2 class="title">Чим ми займаємося</h2>
           <ul class="list">
             <li class="item">
-              <img src="./images/img-1.jpg" alt="Планшет з кодом" width="370" />
+              <div class="job-img-wrap">
+                <img src="./images/img-1.jpg" alt="Планшет з кодом" width="370" />
+                <h3 class="job-subtitle">Десктопні додатки</h3>
+              </div>
             </li>
             <li class="item">
-              <img src="./images/img-2.jpg" alt="Ноутбук" width="370" />
+              <div class="job-img-wrap">
+                <img src="./images/img-2.jpg" alt="Ноутбук" width="370" />
+                <h3 class="job-subtitle">Мобільні додатки</h3>
+              </div>
             </li>
             <li class="item">
-              <img src="./images/img-3.jpg" alt="Планшет з вибором кольорів" width="370" />
+              <div class="job-img-wrap">
+                <img src="./images/img-3.jpg" alt="Планшет з вибором кольорів" width="370" />
+                <h3 class="job-subtitle">Дизайнерські рішення</h3>
+              </div>
             </li>
           </ul>
         </div>
       </section>
 
-      <section class="team">
+      <section class="team section">
         <div class="container">
           <h2 class="title">Наша команда</h2>
           <ul class="team-list list">
@@ -295,7 +304,7 @@
         </div>
       </section>
 
-      <section class="clients">
+      <section class="clients section">
         <div class="container">
           <h2 class="title">Постійні клієнти</h2>
 
@@ -418,5 +427,17 @@
         </div>
       </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-close" data-modal-close>
+          <svg width="11" height="11">
+            <use href="./images/sprite.svg#close-link"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>
