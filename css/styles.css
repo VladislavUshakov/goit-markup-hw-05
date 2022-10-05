@@ -593,7 +593,6 @@ img {
 
 .modal-close {
   position: absolute;
-  display: flex;
   top: 8px;
   right: 8px;
   width: 30px;
@@ -604,9 +603,15 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--primary-light-color);
 
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
+}
+
+.modal-close-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
 }
 
 .is-hidden {
