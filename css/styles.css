@@ -573,6 +573,8 @@ img {
   color: rgba(255, 255, 255, 0.6);
   font-style: normal;
   line-height: 1.71;
+
+  transition: color 250ms var(--animation-timing-function);
 }
 
 .page-footer .link:hover,
