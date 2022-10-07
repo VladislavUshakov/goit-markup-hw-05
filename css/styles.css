@@ -8,6 +8,8 @@
   --primary-icon-color: #afb1b8;
   --secondary-active-color: #188ce8;
   --primary-active-color: #2196f3;
+
+  --animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -23,10 +25,14 @@ h3,
 h4,
 h5,
 h6,
-p,
-ul {
+p {
   margin: 0;
-  padding: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 0;
 }
 
 img {
@@ -114,6 +120,9 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+
+  transition: color 250ms var(--animation-timing-function),
+    background-color 250ms var(--animation-timing-function);
 }
 
 .icon {
@@ -155,6 +164,8 @@ img {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms var(--animation-timing-function);
 }
 
 .page-header .link:hover,
@@ -251,6 +262,8 @@ img {
   font-weight: 700;
   line-height: 1.88;
   letter-spacing: 0.06em;
+
+  transition: background-color 250ms var(--animation-timing-function);
 }
 
 .hero .button:hover,
@@ -373,6 +386,7 @@ img {
 
 .team .socials-item {
   color: var(--primary-icon-color);
+  background-color: inherit;
 }
 
 .team .socials-item:hover,
@@ -401,6 +415,9 @@ img {
   color: var(--primary-icon-color);
   border: 1px solid var(--primary-icon-color);
   border-radius: 4px;
+
+  transition: color 250ms var(--animation-timing-function),
+    border-color 250ms var(--animation-timing-function);
 }
 
 .clients .fluid-icon:hover,
@@ -425,6 +442,10 @@ img {
 
 .portfolio .button {
   padding: 6px 22px;
+
+  transition: color 250ms var(--animation-timing-function),
+    background-color 250ms var(--animation-timing-function),
+    box-shadow 250ms var(--animation-timing-function);
 }
 
 .portfolio .button:hover,
@@ -444,6 +465,8 @@ img {
 
 .portfolio .item {
   flex-basis: 370px;
+
+  transition: box-shadow 250ms var(--animation-timing-function);
 }
 
 .portfolio .item:hover,
@@ -454,6 +477,7 @@ img {
 
 .portfolio-item-wrap {
   position: relative;
+  overflow: hidden;
 }
 
 .portfolio-projects-text {
@@ -462,9 +486,11 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 63px 24px;
+  padding: 63px 24px 0;
+  transform: translate(0, 100%);
 
-  opacity: 0;
+  transition: transform 250ms var(--animation-timing-function);
+
   background-color: rgba(33, 150, 243, 0.9);
 
   font-size: 18px;
@@ -472,8 +498,9 @@ img {
   color: var(--primary-light-color);
 }
 
-.portfolio .item:hover .portfolio-projects-text {
-  opacity: 1;
+.portfolio .link:hover .portfolio-projects-text,
+.portfolio .link:focus .portfolio-projects-text {
+  transform: translate(0);
 }
 
 .portfolio .content {
@@ -484,16 +511,17 @@ img {
   border-bottom: 1px solid #eeeeee;
 }
 
-.portfolio .title {
+.portfolio-projects .title {
   margin-bottom: 4px;
 
   text-align: left;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  color: var(--primary-text-color);
 }
 
-.portfolio .text {
+.portfolio-projects .text {
   color: var(--third-light-color);
   font-size: 16px;
   line-height: 1.88;
